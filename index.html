@@ -27,7 +27,7 @@
         </a>
         <nav>
           <i class="fa-solid fa-bars toggle-menu"></i>
-          <ul>
+          <ul class="nav-links">
             <li><a class="active" href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -505,14 +505,49 @@
         }
       });
 
-      // Apply the specified properties to the nav ul element
-      navUl.style.display = "none";
-      navUl.style.flexDirection = "column";
-      navUl.style.position = "absolute";
-      navUl.style.left = "0";
-      navUl.style.top = "100%";
-      navUl.style.width = "100%";
-      navUl.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+      // Add a resize event listener to apply the styles for max-width: 767px
+      window.addEventListener("resize", function () {
+        if (window.innerWidth <= 767) {
+          // Apply the specified properties to the nav ul element
+          navUl.style.display = "none";
+          navUl.style.flexDirection = "column";
+          navUl.style.position = "absolute";
+          navUl.style.left = "0";
+          navUl.style.top = "100%";
+          navUl.style.width = "100%";
+          navUl.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        } else {
+          // Reset the properties of the nav ul element for larger screen sizes
+          navUl.style.display = "";
+          navUl.style.flexDirection = "";
+          navUl.style.position = "";
+          navUl.style.left = "";
+          navUl.style.top = "";
+          navUl.style.width = "";
+          navUl.style.backgroundColor = "";
+        }
+      });
+
+      // Initial check for screen size on page load
+      if (window.innerWidth <= 767) {
+        // Apply the specified properties to the nav ul element
+        navUl.style.display = "none";
+        navUl.style.flexDirection = "column";
+        navUl.style.position = "absolute";
+        navUl.style.left = "0";
+        navUl.style.top = "100%";
+        navUl.style.width = "100%";
+        navUl.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+      } else {
+        // Reset the properties of the nav ul element for larger screen sizes
+        navUl.style.display = "";
+        navUl.style.flexDirection = "";
+        navUl.style.position = "";
+        navUl.style.left = "";
+        navUl.style.top = "";
+        navUl.style.width = "";
+        navUl.style.backgroundColor = "";
+      }
     </script>
   </body>
 </html>
